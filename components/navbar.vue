@@ -1,12 +1,12 @@
 <template>
 	<header class="bg-gray-dark">
 		<nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-			<RouterLink to="/">
+			<NuxtLink to="/">
 				<div class="-m-1.5 p-1.5">
 					<span class="sr-only">SpaceBits</span>
 					<img class="h-8 w-auto" src="/apple-touch-icon.png" alt="" />
 				</div>
-			</RouterLink>
+			</NuxtLink>
 			<div class="flex lg:hidden">
 				<button
 					type="button"
@@ -71,16 +71,16 @@ import { Features } from "@/features";
 
 const navigation = [
 	{ name: "Home", path: "/" },
-	{ name: "People In Space", path: "/peopleinspace" },
+	{ name: "People In Space", path: "peopleinspace" },
 ];
 
 // Feature flagged nav items
 if (Features.isEnabled(Features.available.upcomingLaunches)) {
-	navigation.push({ name: "Upcoming Launches", path: "/upcominglaunches" });
+	navigation.push({ name: "Upcoming Launches", path: "upcominglaunches" });
 }
 
 if (Features.isEnabled(Features.available.neo)) {
-	navigation.push({ name: "NEO", path: "/neo" });
+	navigation.push({ name: "NEO", path: "neo" });
 }
 
 const mobileMenuOpen = ref(false);
