@@ -10,6 +10,7 @@ phases:
     commands:
       - echo Build started on `date`
       - pnpm install
+      - pnpm run test
       - pnpm run generate
   post_build:
     commands:
