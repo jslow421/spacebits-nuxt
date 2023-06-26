@@ -18,7 +18,7 @@
 				</button>
 			</div>
 			<div class="hidden lg:flex lg:gap-x-12">
-				<router-link
+				<NuxtLink
 					v-for="item in navigation"
 					:key="item.name"
 					class="text-sm font-semibold leading-6 text-white"
@@ -26,7 +26,7 @@
 					:to="item.path"
 				>
 					{{ item.name }}
-				</router-link>
+				</NuxtLink>
 			</div>
 		</nav>
 		<Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
@@ -47,7 +47,7 @@
 				<div class="mt-6 flow-root">
 					<div class="divide-gray-500/10 -my-6 divide-y">
 						<div class="space-y-2 py-6">
-							<router-link
+							<NuxtLink
 								v-for="item in navigation"
 								:key="item.name"
 								class="text-gray-900 hover:bg-gray-50 -mx-3 block rounded-lg px-3 py-2 font-semibold leading-7 text-base"
@@ -55,7 +55,7 @@
 								:to="item.path"
 							>
 								{{ item.name }}
-							</router-link>
+							</NuxtLink>
 						</div>
 					</div>
 				</div>
@@ -65,7 +65,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { Dialog, DialogPanel } from "@headlessui/vue";
 import { Bars3Icon, XMarkIcon } from "@heroicons/vue/24/outline";
 import { Features } from "@/features";

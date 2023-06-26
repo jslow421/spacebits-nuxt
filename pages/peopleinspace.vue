@@ -39,7 +39,6 @@ import axios from "axios";
 import { onMounted, ref, Ref } from "vue";
 import { PeopleInSpaceModel } from "../models/peopleModel";
 import { Configuration } from "../.configuration";
-import spinner from "../components/spinner.vue";
 
 const isLoading = ref(false);
 const peopleModel = ref({
@@ -48,6 +47,10 @@ const peopleModel = ref({
 	people: [],
 	update_date: "",
 }) as Ref<PeopleInSpaceModel>;
+
+useHead({
+	title: "People in Space",
+});
 
 async function retrievePeople() {
 	try {

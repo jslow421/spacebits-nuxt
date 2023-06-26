@@ -82,6 +82,10 @@ const neoModel = ref({
 	updated_date_time: "",
 }) as Ref<NearEarthObjects>;
 
+useHead({
+	title: "Near Earth Objects",
+});
+
 async function retrieveNeo() {
 	try {
 		const resp = await axios.get(Configuration.NEO_URL, {
