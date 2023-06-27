@@ -71,16 +71,16 @@ import { Features } from "@/features";
 
 const navigation = [
 	{ name: "Home", path: "/" },
-	{ name: "People In Space", path: "peopleinspace" },
+	{ name: "People In Space", path: "/peopleinspace" },
 ];
 
 // Feature flagged nav items
 if (Features.isEnabled(Features.available.upcomingLaunches)) {
-	navigation.push({ name: "Upcoming Launches", path: "upcominglaunches" });
+	navigation.push({ name: "Upcoming Launches", path: "/upcominglaunches" });
 }
 
 if (Features.isEnabled(Features.available.neo)) {
-	navigation.push({ name: "NEO", path: "neo" });
+	navigation.push({ name: "NEO", path: "/neo" });
 }
 
 const mobileMenuOpen = ref(false);
